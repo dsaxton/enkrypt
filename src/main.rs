@@ -1,6 +1,6 @@
 use std::io::Write;
 use clap::Parser;
-use sha2::{Sha256, Digest};
+use sha2::{Sha512, Digest};
 
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = "Minimal XOR encryption utility")]
@@ -18,7 +18,7 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let mut hasher = Sha256::new();
+    let mut hasher = Sha512::new();
     hasher.update(args.key.as_bytes());
     let hashed_key: Vec<u8> = hasher.finalize().to_vec();
     let file_bytes = match std::fs::read(args.input) {
