@@ -38,6 +38,6 @@ fn main() {
 
     for (idx, file_byte) in file_bytes.iter().enumerate() {
         let xor_byte = file_byte ^ hashed_key[idx % hashed_key.len()];
-        file.write_all(&[xor_byte]).unwrap();
+        file.write_all(&[xor_byte]).expect("Unable to write byte");
     }
 }
