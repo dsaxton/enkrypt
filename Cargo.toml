@@ -2,6 +2,13 @@
 name = "enkrypt"
 version = "0.1.0"
 edition = "2021"
+description = "Minimal XOR encryption utility"
+homepage = "https://www.github.com/dsaxton/enkrypt"
+documentation = "https://www.github.com/dsaxton/enkrypt"
+repository = "https://www.github.com/dsaxton/enkrypt"
+readme = "README.md"
+keywords = ["encryption", "xor"]
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 clap = { version = "3.1.6", features = ["derive"] }
